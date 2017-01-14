@@ -21,10 +21,11 @@
 <script src="../image-manager-plugin/js/container.js"></script>
 <script src="../image-manager-plugin/js/app.js"></script>
 <script>
+
     var imageManager = new app.ImageManager();
 
     function checkApplication() {
-        imageManager.container.setContainer();
+        imageManager.init();
     }
 
     $on(window, 'load', checkApplication);
