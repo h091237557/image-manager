@@ -4,12 +4,10 @@
     }
 
     ImageManager.prototype.init = function(options) {
-        options = options || {};
-        this.element = options.element || '';
-        this.images = options.images || [];
-
-        this.container.setContainer(this.element);
-        this.container.addImages(this.images);
+        this.container.init(options);
+    };
+    ImageManager.prototype.addImage = function(imageArray) {
+        this.container.addImages(imageArray);
     };
 
     // Export to window

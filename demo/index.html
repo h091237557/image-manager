@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Image Manager</title>
-    <link rel="stylesheet" type="text/css" href="css/main.css" />
-    <link rel="stylesheet" type="text/css" href="../image-manager-plugin/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="css/main.css"/>
+    <link rel="stylesheet" type="text/css" href="../image-manager-plugin/css/main.css"/>
 </head>
 <body>
 <div class="wrapper-page">
@@ -19,6 +19,7 @@
     </section>
 </div>
 <script src="../image-manager-plugin/js/helpers.js"></script>
+<script src="../image-manager-plugin/js/imageList.js"></script>
 <script src="../image-manager-plugin/js/image.js"></script>
 <script src="../image-manager-plugin/js/container.js"></script>
 <script src="../image-manager-plugin/js/app.js"></script>
@@ -28,9 +29,9 @@
         element = window.qs('.image-manager'),
         exampleArrayImage = [];
 
-    for(var i = 1; i <= 10; i++){
+    for (var i = 1; i <= 10; i++) {
         exampleArrayImage.push({
-            url: 'img/example ('+ i +').jpg'
+            url: 'img/example (' + i + ').jpg'
         })
     }
 
@@ -39,7 +40,20 @@
             element: element,
             images: exampleArrayImage
         });
+
+        var varCounter = 0,
+            addImage = function () {
+                if (varCounter <= 9) {
+                    imageManager.addImage(exampleArrayImage[varCounter]);
+                    varCounter++;
+                } else {
+                    clearInterval(addImage);
+                }
+            };
+
+        setInterval(addImage, 1000);
     }
+
 
     $on(window, 'load', checkApplication);
 
