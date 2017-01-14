@@ -1,11 +1,14 @@
 @import 'variables';
 
+@import 'sections/about';
+@import 'sections/demo-content';
 *{
   box-sizing: border-box;
 }
 
 body{
   background-color: $gray;
+  color: $gray-dark;
   width: 100%;
   margin: 0;
   padding: 0;
