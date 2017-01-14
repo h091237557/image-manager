@@ -13,4 +13,11 @@
         target.addEventListener(type, callback, !!useCapture);
     };
 
+    //create element
+    window.elt = function(name, className) {
+        var elt = document.createElement(name);
+        if (className) elt.className = className;
+        return elt;
+    }
+
 })(window);

@@ -12,8 +12,8 @@
         <p>test page</p>
     </section>
     <section class="demo-content">
-        <div class="image-manager__container">
-            <div class="image-manager"></div>
+        <div class="image-manager">
+
         </div>
     </section>
 </div>
@@ -22,10 +22,13 @@
 <script src="../image-manager-plugin/js/app.js"></script>
 <script>
 
-    var imageManager = new app.ImageManager();
+    var imageManager = new app.ImageManager(),
+        element = window.qs('.image-manager');
 
     function checkApplication() {
-        imageManager.init();
+        imageManager.init({
+            element: element
+        });
     }
 
     $on(window, 'load', checkApplication);
