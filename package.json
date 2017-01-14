@@ -10,5 +10,8 @@
     "type": "git0",
     "url": "https://github.com/karszczak/image-manager/commits/master"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "grunt-npm-install": "^0.3.1"
+  }
 }
