@@ -4,6 +4,18 @@
     <meta charset="UTF-8">
     <title>Image Manager</title>
 </head>
-<script src="../image-manager-plugin/main.js"></script>
+<script src="../image-manager-plugin/js/helpers.js"></script>
+<script src="../image-manager-plugin/js/container.js"></script>
+<script src="../image-manager-plugin/js/app.js"></script>
+<script>
+    var imageManager = new app.ImageManager();
+
+    function checkApplication() {
+        imageManager.container.setContainer();
+    }
+
+    $on(window, 'load', checkApplication);
+
+</script>
 </body>
 </html>
