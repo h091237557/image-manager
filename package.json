@@ -1,0 +1,14 @@
+{
+  "name": "image-manager",
+  "version": "0.0.1",
+  "description": "plugin",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git0",
+    "url": "https://github.com/karszczak/image-manager/commits/master"
+  },
+  "license": "MIT"
+}
