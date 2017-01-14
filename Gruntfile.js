@@ -3,8 +3,11 @@ module.exports = function(grunt) {
         pkg: grunt.file.readJSON('package.json'),
         sass: {
             dist: {
+                options:{
+                    sourcemap: 'none'
+                },
                 files: {
-                    'demo/css/main.css' : 'demo/sass/main.scss'
+                    'demo/css/main.css' : 'demo/scss/main.scss'
                 }
             }
         },
