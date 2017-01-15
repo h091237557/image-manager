@@ -5,6 +5,7 @@
         this.img.setAttribute('src', options.url);
         this.container = window.elt('div', 'image');
         this.imageList = window.app.ImageList.getInstance();
+        this.menu = window.app.Menu.getInstance();
 
 
         this.container.addEventListener('click', function(e){
@@ -16,11 +17,13 @@
         this.container.appendChild(this.img);
         this.imageList.add(this.img);
         element.appendChild(this.container);
+        this.menu.actualView();
     };
 
     Image.prototype.delete = function(){
         this.imageList.removeObject(this.img);
         this.container.parentNode.removeChild(this.container);
+        this.menu.actualView();
     };
 
     Image.prototype.delateChechked = function(){

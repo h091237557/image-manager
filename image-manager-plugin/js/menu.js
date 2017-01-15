@@ -6,6 +6,8 @@
             var container = window.elt('div', 'image-manager__menu'),
                 imageList = window.app.ImageList.getInstance();
 
+            actualView();
+
             function checkAll(){
 
             }
@@ -15,11 +17,12 @@
             }
 
             function actualView(){
-
+                container.innerHTML = imageList.count();
             }
 
             return {
-                container: container
+                container: container,
+                actualView: actualView
             }
         }
 
