@@ -1,7 +1,8 @@
 (function (window) {
     function Container() {
         this.container = window.elt('div', 'image-manager__container');
-        this.imageList = new window.app.ImageList();
+        this.container.content = window.elt('div', 'image-manager__content');
+        this.container.appendChild(this.container.content);
     }
 
     Container.prototype.setContainer = function (element) {
@@ -15,10 +16,13 @@
 
         function add(value) {
             var img = new window.app.Image(value);
-            self.imageList.add(img);
-            self.container.appendChild(img.container);
+            self.container.content.appendChild(img.container);
         }
+    };
 
+    Container.prototype.addMenu = function (){
+        var menu = new window.app.Menu();
+        this.container.insertBefore(menu.container, this.container.childNodes[0]);
     };
 
     Container.prototype.init = function (options) {
@@ -27,6 +31,7 @@
             images = options.images || [];
 
         this.setContainer(element);
+        this.addMenu();
         this.addImages(images);
     };
 
