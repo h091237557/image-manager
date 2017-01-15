@@ -34,11 +34,21 @@
                 return -1;
             }
 
+            function removeAt( index ){
+                list.splice( index, 1 );
+            }
+
+            function removeObject(obj){
+                removeAt(indexOf(obj,0))
+            }
+
             return {
                 add: add,
                 count: count,
                 get: get,
-                indexOf: indexOf
+                indexOf: indexOf,
+                removeAt: removeAt,
+                removeObject: removeObject
             }
         }
 

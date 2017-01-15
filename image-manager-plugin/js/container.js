@@ -17,7 +17,8 @@
 
         function add(value) {
             var img = new window.app.Image(value);
-            self.container.content.appendChild(img.container);
+            img.add(self.container.content);
+
         }
     };
 
