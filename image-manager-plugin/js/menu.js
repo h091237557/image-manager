@@ -1,22 +1,37 @@
 (function(window){
-    function Menu(){
-        this.container = window.elt('div', 'image-manager__menu');
-        this.imageList = new window.ImageList();
-    }
+    var Menu = (function(){
+        var instance;
 
-    Menu.prototype.checkAll = function(){
+        function init(){
+            var container = window.elt('div', 'image-manager__menu'),
+                imageList = window.app.ImageList.getInstance();
 
-    };
+            function checkAll(){
 
-    Menu.prototype.deleteAll = function(){
+            }
 
-    };
+            function deleteAll(){
 
-    Menu.prototype.actualView = function(){
+            }
 
-    };
+            function actualView(){
 
+            }
 
+            return {
+                container: container
+            }
+        }
+
+        return {
+            getInstance: function () {
+                if (!instance) {
+                    instance = init();
+                }
+                return instance;
+            }
+        }
+    })();
 
     // Export to window
     window.app = window.app || {};

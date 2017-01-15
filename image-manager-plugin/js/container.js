@@ -1,5 +1,6 @@
 (function (window) {
     function Container() {
+        this.menu =  window.app.Menu.getInstance();
         this.container = window.elt('div', 'image-manager__container');
         this.container.content = window.elt('div', 'image-manager__content');
         this.container.appendChild(this.container.content);
@@ -21,8 +22,7 @@
     };
 
     Container.prototype.addMenu = function (){
-        var menu = new window.app.Menu();
-        this.container.insertBefore(menu.container, this.container.childNodes[0]);
+        this.container.insertBefore( this.menu.container, this.container.childNodes[0]);
     };
 
     Container.prototype.init = function (options) {

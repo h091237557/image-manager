@@ -1,35 +1,56 @@
 (function(window){
-    function ImageList(){
-        this.list = [];
-    }
+    var ImageList = (function(){
+        var instance;
 
-    ImageList.prototype.add = function(obj){
-        console.log('added image nr:' + (this.count()+1));
-      return this.list.push(obj);
-    };
+        function init(){
+            var list = [];
 
-    ImageList.prototype.count = function(){
-        return this.list.length;
-    };
-
-    ImageList.prototype.get = function( index ){
-        if( index > -1 && index < this.list.length ){
-            return this.list[ index ];
-        }
-    };
-
-    ImageList.prototype.indexOf = function( obj, startIndex ){
-        var i = startIndex;
-
-        while( i < this.list.length ){
-            if( this.list[i] === obj ){
-                return i;
+            function add(obj){
+                console.log('added image nr:' + (this.count()+1));
+                return list.push(obj);
             }
-            i++;
+
+            function count(){
+                return list.length;
+
+            }
+
+            function get(index){
+                if( index > -1 && index < list.length ){
+                    return list[ index ];
+                }
+            }
+
+            function indexOf(obj, startIndex){
+                var i = startIndex;
+
+                while( i < list.length ){
+                    if( list[i] === obj ){
+                        return i;
+                    }
+                    i++;
+                }
+
+                return -1;
+            }
+
+            return {
+                add: add,
+                count: count,
+                get: get,
+                indexOf: indexOf
+            }
         }
 
-        return -1;
-    };
+        return {
+            getInstance: function () {
+                if (!instance) {
+                    instance = init();
+                }
+                return instance;
+            }
+        }
+    })();
 
     // Export to window
     window.app = window.app || {};
