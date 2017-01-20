@@ -2,8 +2,8 @@
     function Container() {
         this.menu =  window.app.Menu.getInstance();
         this.container = window.elt('div', 'image-manager__container');
-        this.container.content = window.elt('div', 'image-manager__content');
-        this.container.appendChild(this.container.content);
+        this.content = window.elt('div', 'image-manager__content');
+        this.container.appendChild(this.content);
     }
 
     Container.prototype.setContainer = function (element) {
@@ -17,7 +17,7 @@
 
         function add(value) {
             var img = new window.app.Image(value);
-            img.add(self.container.content);
+            img.add(self.content);
 
         }
     };
