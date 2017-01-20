@@ -19,44 +19,25 @@
     </section>
 </div>
 <script src="../image-manager-plugin/js/helpers.js"></script>
-<script src="../image-manager-plugin/js/imageList.js"></script>
-<script src="../image-manager-plugin/js/image.js"></script>
-<script src="../image-manager-plugin/js/menu.js"></script>
-<script src="../image-manager-plugin/js/container.js"></script>
-<script src="../image-manager-plugin/js/app.js"></script>
 <script>
+    /*global app, $on */
+    (function () {
 
-    var imageManager = new app.ImageManager(),
-        element = window.qs('.image-manager'),
-        exampleArrayImage = [];
+        function ImageManager(name) {
+            this.storage = undefined;
+            this.model = undefined;
+            this.template = undefined;
+            this.view = undefined;
+            this.controller = undefined;
+        }
 
-    for (var i = 1; i <= 10; i++) {
-        exampleArrayImage.push({
-            url: 'img/example (' + i + ').jpg'
-        })
-    }
+        var imageManager = new ImageManager('test');
 
-    function checkApplication() {
-        imageManager.init({
-            element: element,
-            images: exampleArrayImage
-        });
-
-        var varCounter = 0,
-            addImage = function () {
-                if (varCounter <= 9) {
-                    imageManager.addImage(exampleArrayImage[varCounter]);
-                    varCounter++;
-                } else {
-                    clearInterval(addImage);
-                }
-            };
-
-        setInterval(addImage, 100);
-    }
-
-
-    $on(window, 'load', checkApplication);
+        function setView() {
+//            return !!imageManager.controller.setView();
+        }
+        $on(window, 'load', setView);
+    })();
 </script>
 </body>
 </html>
