@@ -1,0 +1,44 @@
+.menu {
+  background-color: $gray-dark;
+  color: #ffffff;
+  padding: 0 0.5em;
+  &__content {
+    max-width: 60%;
+    float: left;
+    font-size: 1em;
+    line-height: 3.25em;
+  }
+
+  &__edit-panel {
+    float: right;
+
+    button {
+      background: linear-gradient(to bottom, #eae0c2 5%, #ccc2a6 100%);
+      border: 2px solid #333029;
+      display: inline-block;
+      cursor: pointer;
+      color: #2d2e29;
+      font-size: 14px;
+      font-weight: bold;
+      padding: 0.75em 1em;
+      text-decoration: none;
+      text-shadow: 0 1px 0 #ffffff;
+      outline: none;
+
+      margin: 0.5em 0 0.25em 0;
+      &:hover{
+        background: linear-gradient(to bottom, #d2c9ae 5%, #b7ae95 100%);
+      }
+
+      &:active {
+        background: linear-gradient(to bottom, #ccc2a6 5%, #eae0c2 100%);
+      }
+    }
+  }
+
+  &:after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+}
